@@ -19,8 +19,12 @@ export class CreateUtmComponentComponent implements OnInit {
   onSubmit(utmForm){
     console.log(utmForm.value);
 
-  console.log("submitted");
-  }
+    console.log("submitted");
+
+    var test = new CreateUtmComponentComponent();
+    
+    console.log("test", test);
+    }
 
 
  constructor() {

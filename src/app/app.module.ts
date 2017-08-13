@@ -7,6 +7,7 @@ import { HeaderComponentComponent } from './header-component/header-component.co
 import { FooterComponentComponent } from './footer-component/footer-component.component';
 import { MainMenuComponentComponent } from './main-menu-component/main-menu-component.component';
 import { CreateUtmComponentComponent } from './create-utm-component/create-utm-component.component';
+import { ListUtmComponentComponent } from './list-utm-component/list-utm-component.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { CreateUtmComponentComponent } from './create-utm-component/create-utm-c
     HeaderComponentComponent,
     FooterComponentComponent,
     MainMenuComponentComponent,
-    CreateUtmComponentComponent
+    CreateUtmComponentComponent,
+    ListUtmComponentComponent
   ],
   imports: [
     BrowserModule,

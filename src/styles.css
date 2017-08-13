@@ -1,1 +1,41 @@
-/* You can add global styles to this file, and also import other style files */
+body{
+	font-family: 'Source Sans Pro', sans-serif;
+	color: #23201f;
+}
+
+.form-control {
+	border: 0px;
+	box-shadow:none !important;
+	border-radius: 0;
+	border-bottom: 1px solid gray;
+	padding: 5px 0;
+
+}
+
+.form-control.ng-touched {
+		padding: 5px;
+		transition: 0.4s;
+}
+
+.form-control.ng-valid {
+    padding: 5px;
+	border-left: 8px solid #00A6A6;
+	border-bottom: 1px solid #00A6A6;
+}
+
+.form-control.ng-invalid.ng-touched {
+	border-left: 8px solid #D95D39;
+	border-bottom: 1px dashed #D95D39;
+
+}
+
+.btn.btn-primary {
+	border-radius: 0;
+	background-color: #005B5B;
+	background-image: none;
+	min-width: 300px;
+}
+
+.text-muted {
+    font-size: 10px;
+}

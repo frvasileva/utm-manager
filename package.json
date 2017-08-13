@@ -4,7 +4,7 @@
   "license": "MIT",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "ng serve | node server/index.js",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
@@ -23,6 +23,8 @@
     "@angular/router": "^4.0.0",
     "bootstrap": "^4.0.0-beta",
     "core-js": "^2.4.1",
+    "express": "^4.15.4",
+    "mysql": "^2.14.1",
     "rxjs": "^5.4.1",
     "zone.js": "^0.8.14"
   },

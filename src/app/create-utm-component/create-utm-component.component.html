@@ -4,17 +4,15 @@
 </h2>
 
 
-
-<textarea style="width:900px">
-	{{campaignUrl}}?utm_source={{campaignSource}}&utm_medium={{campaignMedium}}&utm_campaign={{campaignName}}&utm_term={{campaignTerm}}&utm_content={{campaignContent}}
+<textarea style="width:300px">{{campaignUrl}}?utm_source={{campaignSource}}&utm_medium={{campaignMedium}}&utm_campaign={{campaignName}}&utm_term={{campaignTerm}}&utm_content={{campaignContent}}
 </textarea>
 
 
 <hr>
 <div class="form-group">
     <label for="exampleInputEmail1">Url</label>
-    <input type="text" class="form-control" [(ngModel)]="campaignUrl" name="campaignUrl" placeholder="Enter Campaign Url" required="true">
-    <small id="emailHelp" class="form-text text-muted">
+    <input type="url" class="form-control" [(ngModel)]="campaignUrl" name="campaignUrl" placeholder="Enter Campaign Url" required="true">
+    <small class="form-text text-muted">
 		Put url you want to share
     </small>
   </div>
@@ -23,7 +21,7 @@
     <label for="exampleInputEmail1">Campaign Name</label>
     <input type="text" class="form-control" [(ngModel)]="campaignName" name="campaignName" placeholder="Enter Campaign Medium" required="true">
     <small id="emailHelp" class="form-text text-muted">
-		Required parameter to identify a specific product promotion or strategic campaign such as a spring sale or other promotion.
+		Use it to identify a specific product promotion or strategic campaign such as a spring sale or other promotion.
     </small>
   </div>
 
@@ -31,7 +29,7 @@
     <label for="campaignSource">Campaign Source</label>
     <input type="text" class="form-control" id="campaignSource" [(ngModel)] = "campaignSource" name="campaignSource" placeholder="Enter Campaign Source" required="true">
     <small id="emailHelp" class="form-text text-muted">
-    	Required parameter to identify the source of your traffic such as: search engine, newsletter, or other referral.
+    	Use it to identify the source of your traffic such as: search engine, newsletter, or other referral.
     </small>
   </div>
 
@@ -39,7 +37,7 @@
     <label for="campaignMedium">Campaign Medium</label>
     <input type="text" class="form-control" id="campaignMedium" [(ngModel)]="campaignMedium" name="campaignMedium" placeholder="Enter Campaign Medium" required="true">
     <small id="emailHelp" class="form-text text-muted">
-    	Required parameter to identify the medium the link was used upon such as: email, CPC, or other method of sharing.
+    	Use it to identify the medium the link was used upon such as: email, CPC, or other method of sharing.
     </small>
   </div>
 
@@ -47,7 +45,7 @@
     <label for="campaignTerm">Campaign Term</label>
     <input type="text" class="form-control" id="campaignTerm" [(ngModel)]="campaignTerm" name="campaignTerm" placeholder="Enter Campaign Medium" required="true">
     <small id="emailHelp" class="form-text text-muted">
-    	Optional parameter suggested for paid search to identify keywords for your ad. You can skip this for Google AdWords if you have connected your AdWords and Analytics accounts and use the auto-tagging feature instead.
+    	Optional parameter suggested for paid search to identify keywords for your ad.
     </small>
   </div>
 
