@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+//import { HttpClientModule } from '@angular/common/http'; // <-- Import HttpClientModule from @angular/common/http//
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-create-utm-component',
@@ -8,34 +10,47 @@ import { Component, OnInit } from '@angular/core';
 export class CreateUtmComponentComponent implements OnInit {
 
 
- 	public campaignUrl: string;
+  	public campaignUrl: string;
     public campaignName: string;
     public campaignSource: string;
     public campaignMedium: string;
     public campaignTerm: string;
     public campaignContent: string;
 
+    //test:
+    private results;
 
-  onSubmit(utmForm){
+
+  onSubmit(utmForm) {
     console.log(utmForm.value);
 
     console.log("submitted");
-
-    var test = new CreateUtmComponentComponent();
-    
-    console.log("test", test);
     }
 
 
- constructor() {
+ constructor(private http: HttpClient) {
 
     this.campaignUrl = 'https://www.klearlending.com/';
     this.campaignName = 'Windstorm';
+    this.campaignSource = 'fakeSource';
+    this.campaignMedium = 'fakeMedium';
+    this.campaignTerm = 'fakeCampaignTerm';
+    this.campaignContent = 'fakeCampaignContent';
 
  }
 
-  ngOnInit() {
-  }
+   // ngOnInit() {
+   // }
 
+
+  ngOnInit(): void {
+    // Make the HTTP request:
+    this.http.get('http://localhost:3000/utm/2').subscribe(data => {
+      // Read the result field from the JSON response.
+      this.results = data;
+
+      console.log(this.results);
+    });
+  }
 }
 

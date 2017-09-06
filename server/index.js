@@ -1,13 +1,12 @@
 var db = require('./database')
+var cors = require('cors')
+
 const express = require('express');
 const app = express();
-
 const bodyParser = require('body-parser');
-// app.use(bodyParser);
-// app.use(bodyParser.urlencoded({ extended: false }));
+
 app.use(bodyParser.json())
-
-
+app.use(cors())
 
 app.get('/', function(req, res) {
   db.query('select * from utm', function(error, results, fields) {

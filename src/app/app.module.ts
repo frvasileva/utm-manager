@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms'; // <--- JavaScript import from Angular
+import {HttpClientModule} from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { HeaderComponentComponent } from './header-component/header-component.component';
@@ -20,7 +21,8 @@ import { ListUtmComponentComponent } from './list-utm-component/list-utm-compone
   ],
   imports: [
     BrowserModule,
-    FormsModule  // <--- import into the NgModule
+    FormsModule,  // <--- import into the NgModule
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
