@@ -49,10 +49,6 @@ export class CreateUtmComponentComponent implements OnInit {
 
 
   ngOnInit(): void {
- 
-   let utmEntity = new Utm();
-   utmEntity.campaignUrl = "FANI";
-   console.log(utmEntity);
   
 
     // // Make the HTTP request:
@@ -63,9 +59,11 @@ export class CreateUtmComponentComponent implements OnInit {
     //   console.log(this.results);
     // });
 
-  this.results = this.utmService.getUtm();
+    this.utmService.getUtm().subscribe((utm) => {
+      this.results = utm
+      console.log("got from service: ", this.results);
+    });
 
-  console.log("got from service: ", this.results);
   
   }
 }
