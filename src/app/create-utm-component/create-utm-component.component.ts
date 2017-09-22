@@ -13,58 +13,30 @@ import { UtmService } from '../services/utm.services';
 })
 export class CreateUtmComponentComponent implements OnInit {
 
-
-  	public campaignUrl: string;
-    public campaignName: string;
-    public campaignSource: string;
-    public campaignMedium: string;
-    public campaignTerm: string;
-    public campaignContent: string;
-
-    //test:
-    private results;
+  private utm = new Utm();
 
 
   onSubmit(utmForm) {
     console.log(utmForm.value);
-
     console.log("submitted");
-    }
-
-
- constructor(private http: HttpClient, private utmService: UtmService ) {
-
-
-    this.campaignUrl = 'https://www.klearlending.com/';
-    this.campaignName = 'Windstorm';
-    this.campaignSource = 'fakeSource';
-    this.campaignMedium = 'fakeMedium';
-    this.campaignTerm = 'fakeCampaignTerm';
-    this.campaignContent = 'fakeCampaignContent';
-
- }
-
-   // ngOnInit() {
-   // }
-
-
-  ngOnInit(): void {
-  
-
-    // // Make the HTTP request:
-    // this.http.get('http://localhost:3000/utm/2').subscribe(data => {
-    //   // Read the result field from the JSON response.
-    //   this.results = data;
-
-    //   console.log(this.results);
-    // });
-
-    this.utmService.getUtm().subscribe((utm) => {
-      this.results = utm
-      console.log("got from service: ", this.results);
+    this.utmService.saveUtm(utmForm.value).subscribe((result) => {
+      debugger
     });
+  }
 
-  
+
+   constructor(private http: HttpClient, private utmService: UtmService ) {
+    this.utm = new Utm();
+    console.log("new utm", this.utm);
+   }
+
+   ngOnInit(): void {
+    
+    this.utmService.getUtm().subscribe((utm) => {
+      this.utm = utm
+      console.log("got from service: ", this.utm);
+
+    });  
   }
 }
 

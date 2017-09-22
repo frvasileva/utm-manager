@@ -27,7 +27,7 @@ app.get('/utm', function(req, res) {
   });
 });
 
-app.get('/utm/:id', function(req, res) {
+app.get('/utm/edit/:id', function(req, res) {
   db.query('select * from utm where id =' + req.params.id, function(error, results, fields) {
     if (error) throw error;
 
@@ -35,18 +35,19 @@ app.get('/utm/:id', function(req, res) {
   });
 });
 
-app.post('/utm', function(req, res) {
-
-  console.log(req.body);
-
+app.post('/utm/edit/:id', function(req, res) {
   db.query(
-    'INSERT INTO utm (name, source, medium, term, content) VALUES("name", "source", "medium", "term", "content");',
+    'INSERT INTO utm (name, source, medium, term, content) VALUES(' +
+      '"' + req.body.campaignName + '",' +
+      '"' + req.body.campaignSource + '",' +
+      '"' + req.body.campaignMedium + '",' +
+      '"' + req.body.campaignTerm + '",' +
+      '"' + req.body.campaignContent + '"' +
+    ');',
     function(error, results, fields) {
       if (error) throw error;
       res.json(results);
     });
-
-  res.send('Hello World!')
 });
 
 
