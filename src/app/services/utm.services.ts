@@ -27,7 +27,6 @@ export class UtmService {
 	  saveUtm(data): Observable<boolean> {
 	    return this.http.post('http://localhost:3000/utm/edit/2', data)
 	    	.map(results => {
-	    		debugger
 	    		// var data = results[0];
 	    		// console.log("post",data);
 	    		// return new Utm(

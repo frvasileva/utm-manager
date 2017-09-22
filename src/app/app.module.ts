@@ -10,24 +10,7 @@ import { FooterComponentComponent } from './footer-component/footer-component.co
 import { MainMenuComponentComponent } from './main-menu-component/main-menu-component.component';
 import { CreateUtmComponentComponent } from './create-utm-component/create-utm-component.component';
 import { ListUtmComponentComponent } from './list-utm-component/list-utm-component.component';
-
-//routing configuration
-const appRoutes: Routes = [
-  { path: 'utm/edit', component: CreateUtmComponentComponent },
- // { path: 'hero/:id',      component: HeroDetailComponent },
-  // {
-  //   path: 'heroes',
-  //   component: HeroListComponent,
-  //   data: { title: 'Heroes List' }
-  // },
-  // { path: '',
-  //   redirectTo: '/heroes',
-  //   pathMatch: 'full'
-  // },
-  //{ path: '**', component: PageNotFoundComponent }
-];
-
-
+import { PageNotFoundComponentComponent } from './page-not-found-component/page-not-found-component.component';
 
 @NgModule({
   declarations: [
@@ -36,16 +19,13 @@ const appRoutes: Routes = [
     FooterComponentComponent,
     MainMenuComponentComponent,
     CreateUtmComponentComponent,
-    ListUtmComponentComponent
+    ListUtmComponentComponent,
+    PageNotFoundComponentComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,  // <--- import into the NgModule
-    HttpClientModule,
-    RouterModule.forRoot(
-          appRoutes, 
-          { enableTracing: true } // <-- debugging purposes only
-    )
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
