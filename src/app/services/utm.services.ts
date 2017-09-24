@@ -9,12 +9,13 @@ export class UtmService {
 
 	constructor(private http: HttpClient ) {}
 
-	getUtm(): Observable<Utm> {
-	    return this.http.get('http://localhost:3000/utm/edit/2')
+	getUtm(id): Observable<Utm> {
+	    return this.http.get('http://localhost:3000/utm/edit/' + id)
 	    	.map(results => {
 	    		var data = results[0]
 	    		return new Utm(
-	    			'no url',
+	    			data.id,
+	    			data.url,
 	    			data.name,
 	    			data.source,
 	    			data.medium,
@@ -25,7 +26,7 @@ export class UtmService {
 	  } 
 
 	  saveUtm(data): Observable<boolean> {
-	    return this.http.post('http://localhost:3000/utm/edit/2', data)
+	    return this.http.post('http://localhost:3000/utm/edit/1', data)
 	    	.map(results => {
 	    		// var data = results[0];
 	    		// console.log("post",data);

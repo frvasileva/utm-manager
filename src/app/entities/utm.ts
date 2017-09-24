@@ -2,23 +2,23 @@
 
 export class Utm {
 
- //public id: number;
- public campaignUrl: string;
- public campaignName: string;
- public campaignSource: string;
- public campaignMedium: string;
- public campaignTerm: string;
- public campaignContent: string;
+ public id: number;
+ public url: string;
+ public name: string;
+ public source: string;
+ public medium: string;
+ public term: string;
+ public content: string;
 
- public constructor(campaignUrl?, campaignName?, campaignSource?, campaignMedium?, campaignTerm?, campaignContent?) 
+ public constructor(id?, url?, name?, source?, medium?, term?, content?) 
    { 
-   	//this.id = id; 
-   	this.campaignUrl = campaignUrl; 
-   	this.campaignName = campaignName; 
-   	this.campaignSource = campaignSource; 
-   	this.campaignMedium = campaignMedium; 
-   	this.campaignTerm = campaignTerm; 
-   	this.campaignContent = campaignContent; 
+   	this.id = id; 
+   	this.url = url; 
+   	this.name = name; 
+   	this.source = source; 
+   	this.medium = medium; 
+   	this.term = term; 
+   	this.content = content; 
    }
 }
 

@@ -20,7 +20,7 @@ export class CreateUtmComponentComponent implements OnInit {
     console.log(utmForm.value);
     console.log("submitted");
     this.utmService.saveUtm(utmForm.value).subscribe((result) => {
-      debugger
+      
     });
   }
 
@@ -32,7 +32,7 @@ export class CreateUtmComponentComponent implements OnInit {
 
    ngOnInit(): void {
     
-    this.utmService.getUtm().subscribe((utm) => {
+    this.utmService.getUtm(17).subscribe((utm) => {
       this.utm = utm
       console.log("got from service: ", this.utm);
 
