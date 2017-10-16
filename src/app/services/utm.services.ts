@@ -26,10 +26,11 @@ export class UtmService {
 	  } 
 
 	  saveUtm(data): Observable<boolean> {
-	    return this.http.post('http://localhost:3000/utm/edit/1', data)
+	  	console.log("data on submit: ", data);
+	    return this.http.post('http://localhost:3000/utm/edit/' + data.id, data)
 	    	.map(results => {
 	    		// var data = results[0];
-	    		// console.log("post",data);
+	    		 console.log("post",data);
 	    		// return new Utm(
 	    		// 	'no url',
 	    		// 	data.name,

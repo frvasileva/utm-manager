@@ -12,6 +12,10 @@ import { CreateUtmComponentComponent } from './create-utm-component/create-utm-c
 import { ListUtmComponentComponent } from './list-utm-component/list-utm-component.component';
 import { PageNotFoundComponentComponent } from './page-not-found-component/page-not-found-component.component';
 
+import { AppRoutingModule }        from './app-routing.module';
+import { ContactUsComponent } from './contact-us/contact-us.component';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,12 +24,15 @@ import { PageNotFoundComponentComponent } from './page-not-found-component/page-
     MainMenuComponentComponent,
     CreateUtmComponentComponent,
     ListUtmComponentComponent,
-    PageNotFoundComponentComponent
+    PageNotFoundComponentComponent,
+    ContactUsComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,  // <--- import into the NgModule
-    HttpClientModule
+    HttpClientModule,
+    RouterModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

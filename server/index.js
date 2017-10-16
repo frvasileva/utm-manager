@@ -36,19 +36,41 @@ app.get('/utm/edit/:id', function(req, res) {
 });
 
 app.post('/utm/edit/:id', function(req, res) {
+
+   console.log("node js");
+    console.log("req ", req);
+    console.log("res ", res);
+
   db.query(
-    'INSERT INTO utm (name, source, medium, term, content) VALUES(' +
-      '"' + req.body.campaignName + '",' +
-      '"' + req.body.campaignSource + '",' +
-      '"' + req.body.campaignMedium + '",' +
-      '"' + req.body.campaignTerm + '",' +
-      '"' + req.body.campaignContent + '"' +
-    ');',
+
+   'UPDATE utm SET name = "' + req.body.name + '" WHERE id = "' + req.body.id + '"',
+
     function(error, results, fields) {
       if (error) throw error;
       res.json(results);
     });
 });
+
+// app.post('/utm/edit/:id', function(req, res) {
+
+//    console.log("node js");
+//     console.log("req ", req);
+//     console.log("res ", res);
+    
+//   db.query(
+
+//       'INSERT INTO utm (name, source, medium, term, content) VALUES(' +
+//       '"' + req.body.campaignName + '",' +
+//       '"' + req.body.campaignSource + '",' +
+//       '"' + req.body.campaignMedium + '",' +
+//       '"' + req.body.campaignTerm + '",' +
+//       '"' + req.body.campaignContent + '"' +
+//     ');',
+//     function(error, results, fields) {
+//       if (error) throw error;
+//       res.json(results);
+//     });
+// });
 
 
 
