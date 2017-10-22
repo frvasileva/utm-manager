@@ -37,4 +37,12 @@ export class UtmService {
     		 return true;
 	    	});		
 	  } 
+
+	  createUtm(data): Observable<boolean> {
+	  	return this.http.post('http://localhost:3000/utm/create/', data)
+	    	.map(results => {
+    		 console.log("create post", data);
+    		 return true;
+	    	});		
+	  }
 }

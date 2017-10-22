@@ -5,14 +5,13 @@ import { UtmService } from '../services/utm.services';
 import { ActivatedRoute } from '@angular/router';
 import { Router } from '@angular/router'; 
 
-
 @Component({
-  selector: 'app-create-utm-component',
-  templateUrl: './create-utm-component.component.html',
-  styleUrls: ['./create-utm-component.component.css'],
+  selector: 'app-edit-utm',
+  templateUrl: './edit-utm.component.html',
+  styleUrls: ['./edit-utm.component.css'],
   providers: [UtmService]
 })
-export class CreateUtmComponentComponent implements OnInit {
+export class EditUtmComponent implements OnInit {
 
   private utm = new Utm();
   private id;
@@ -22,13 +21,11 @@ export class CreateUtmComponentComponent implements OnInit {
     console.log("submitted");
     
     console.log("utm submitted", this.utm);
-    this.utmService.createUtm(this.utm).subscribe((result) => {
+    this.utmService.saveUtm(this.utm).subscribe((result) => {
        this.router.navigate(['utms']);    
      });
-   
-  }
 
-
+	}
    constructor(private http: HttpClient, private utmService: UtmService, private route: ActivatedRoute, private router: Router ) {
     this.utm = new Utm();
 
@@ -41,6 +38,14 @@ export class CreateUtmComponentComponent implements OnInit {
    }
 
    ngOnInit(): void {
+    let id = this.route.snapshot.params["id"];
+    // debugger;
+    // console.log("NAME---",id);
     
-  }
+    this.utmService.getUtm(id).subscribe((utm) => {
+      this.utm = utm
+      console.log("got from service: ", this.utm);
+
+    });  
+}
 }

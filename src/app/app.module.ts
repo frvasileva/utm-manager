@@ -15,6 +15,7 @@ import { PageNotFoundComponentComponent } from './page-not-found-component/page-
 import { AppRoutingModule }        from './app-routing.module';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { UtmsComponent } from './utms/utms.component';
+import { EditUtmComponent } from './edit-utm/edit-utm.component';
 
 
 @NgModule({
@@ -27,7 +28,8 @@ import { UtmsComponent } from './utms/utms.component';
     ListUtmComponentComponent,
     PageNotFoundComponentComponent,
     ContactUsComponent,
-    UtmsComponent
+    UtmsComponent,
+    EditUtmComponent
   ],
   imports: [
     BrowserModule,
