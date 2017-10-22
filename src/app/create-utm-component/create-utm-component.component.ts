@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-//import { HttpClientModule } from '@angular/common/http'; // <-- Import HttpClientModule from @angular/common/http//
 import { HttpClient } from '@angular/common/http';
 import { Utm } from '../entities/utm';
 import { UtmService } from '../services/utm.services';
 import { ActivatedRoute } from '@angular/router';
+import { Router } from '@angular/router'; 
 
 
 @Component({
@@ -21,13 +21,16 @@ export class CreateUtmComponentComponent implements OnInit {
     console.log("form submitted values: ", utmForm.value);
     console.log("submitted");
     
-    this.utmService.saveUtm(utmForm.value).subscribe((result) => {
-      
-    });
+    console.log("utm submitted", this.utm);
+    this.utmService.saveUtm(this.utm).subscribe((result) => {
+       this.router.navigate(['utms']);    
+     });
+
+   
   }
 
 
-   constructor(private http: HttpClient, private utmService: UtmService, private route: ActivatedRoute ) {
+   constructor(private http: HttpClient, private utmService: UtmService, private route: ActivatedRoute, private router: Router ) {
     this.utm = new Utm();
 
     this.route.params.subscribe(params => {

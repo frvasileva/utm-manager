@@ -18,11 +18,10 @@ app.get('/', function(req, res) {
 });
 
 
-app.get('/utm', function(req, res) {
+app.get('/utms', function(req, res) {
   db.query('select * from utm', function(error, results, fields) {
     if (error)
-      throw error;
-
+      throw error;    
     res.json(results);
   });
 });
@@ -30,6 +29,7 @@ app.get('/utm', function(req, res) {
 app.get('/utm/edit/:id', function(req, res) {
   db.query('select * from utm where id =' + req.params.id, function(error, results, fields) {
     if (error) throw error;
+   // console.log("is array",results.constructor === Array)
 
     res.json(results);
   });
@@ -43,7 +43,13 @@ app.post('/utm/edit/:id', function(req, res) {
 
   db.query(
 
-   'UPDATE utm SET name = "' + req.body.name + '" WHERE id = "' + req.body.id + '"',
+   'UPDATE utm SET name = "' + req.body.name 
+   + '", source = "' +  req.body.source 
+   + '", medium = "' +  req.body.medium 
+   + '", term = "' +  req.body.term
+   + '", content = "' +  req.body.content 
+   + '", url = "' +  req.body.url
+   + '" WHERE id = "' + req.body.id + '"',
 
     function(error, results, fields) {
       if (error) throw error;

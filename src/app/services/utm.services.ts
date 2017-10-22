@@ -25,22 +25,16 @@ export class UtmService {
 	    	});		
 	  } 
 
-	  saveUtm(data): Observable<boolean> {
-	  	console.log("data on submit: ", data);
-	    return this.http.post('http://localhost:3000/utm/edit/' + data.id, data)
-	    	.map(results => {
-	    		// var data = results[0];
-	    		 console.log("post",data);
-	    		// return new Utm(
-	    		// 	'no url',
-	    		// 	data.name,
-	    		// 	data.source,
-	    		// 	data.medium,
-	    		// 	data.term,
-	    		// 	data.content
-	    		// )
+	  getUtms(): Observable<Utm[]> {
+	  	return this.http.get('http://localhost:3000/utms')
+	    	  .map(response => response as Array<Utm>);		
+	  } 
 
-	    		return true;
+	  saveUtm(data): Observable<boolean> {
+	  	return this.http.post('http://localhost:3000/utm/edit/' + data.id, data)
+	    	.map(results => {
+    		 console.log("post",data);
+    		 return true;
 	    	});		
 	  } 
 }

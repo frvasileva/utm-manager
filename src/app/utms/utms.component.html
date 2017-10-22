@@ -1,0 +1,26 @@
+<table class="table table-hover">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Source</th>
+        <th>Medium</th>
+        <th>Term</th>
+        <th>Content</th>
+        <th>Url</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let utm of utmList">
+        <td>{{utm.name}}</td>
+        <td>{{utm.source}}</td>
+        <td>{{utm.medium}}</td>
+        <td>{{utm.term}}</td>
+        <td>{{utm.content}}</td>
+        <td>{{utm.url}}</td>
+        <td>
+        	<a  [routerLink]="['/utm', 'edit', utm.id]">Edit</a>
+        </td>
+      </tr>
+    </tbody>
+ </table>

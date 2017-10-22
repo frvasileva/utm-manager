@@ -14,6 +14,7 @@ import { PageNotFoundComponentComponent } from './page-not-found-component/page-
 
 import { AppRoutingModule }        from './app-routing.module';
 import { ContactUsComponent } from './contact-us/contact-us.component';
+import { UtmsComponent } from './utms/utms.component';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import { ContactUsComponent } from './contact-us/contact-us.component';
     CreateUtmComponentComponent,
     ListUtmComponentComponent,
     PageNotFoundComponentComponent,
-    ContactUsComponent
+    ContactUsComponent,
+    UtmsComponent
   ],
   imports: [
     BrowserModule,
